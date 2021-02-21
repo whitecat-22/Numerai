@@ -1,5 +1,4 @@
 import os
-import environ
 import time
 import pytz
 import requests
@@ -7,9 +6,10 @@ import traceback
 import numpy as np
 import numerapi
 import pandas as pd
+from datetime import datetime, timezone
 
 # line notify APIのトークン
-line_notify_token = os.getenv("LINE_NOTIFY_TOKEN")
+line_notify_token = os.environ.get("LINE_NOTIFY_TOKEN")
 # line notify APIのエンドポイントの設定
 line_notify_api = 'https://notify-api.line.me/api/notify'
 
@@ -39,8 +39,8 @@ try:
     Catboostを呼び出しnumeraiに予測を提出する
     """
     # 必要なライブラリのinstall
-    !pip install numerapi
-    !pip install catboost
+    #!pip install numerapi
+    #!pip install catboost
 
     import numerapi
     # 回帰を使うので、CatBoostRegressorを呼び出す
@@ -120,13 +120,10 @@ try:
     """
     予測をAPIキーを使って提出する
     """
-    env = environ.Env()
-    env.read_env(os.path.join(BASE_DIR,'.env'))
-
     # APIキーの設定
-    public_id = env('NUMERAI_PUBLIC_ID')
-    secret_key = env('NUMERAI_SECRET_KEY')
-    model_id = env('MODEL_ID')
+    public_id = os.environ.get('PUBLIC_ID')
+    secret_key = os.environ.get('SECRET_KEY')
+    model_id = os.environ.get('MODEL_ID')
 
     napi = numerapi.NumerAPI(public_id=public_id, secret_key=secret_key)
 
