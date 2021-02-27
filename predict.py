@@ -30,7 +30,7 @@ def line_post(notification_message):
     requests.post(line_notify_api, headers=headers, data=data)
 
 # notification_message = content0 +'\n' + '\n\n'.join(content_text)
-notification_message = jst_nowtime +'\n' + "Numerai:価格予想開始"
+notification_message = jst_nowtime +'\n' + "Numerai:価格予測開始"
 line_post(notification_message)
 
 
@@ -131,10 +131,10 @@ try:
     submission_id = napi.upload_predictions(f"{TOURNAMENT_NAME}_{current_ds}_submission.csv", model_id=model_id)
 
     # LINE通知（終了：成功）
-    notification_message = jst_nowtime +'\n' + "Numerai:価格予想 提出完了"
+    notification_message = jst_nowtime +'\n' + "Numerai:価格予測 提出完了"
     line_post(notification_message)
 
 except:
     # LINE通知（終了：失敗）
-    notification_message = jst_nowtime +'\n' + "Numerai:価格予想失敗" +'\n\n' + traceback.format_exc()
+    notification_message = jst_nowtime +'\n' + "Numerai:価格予測失敗" +'\n\n' + traceback.format_exc()
     line_post(notification_message)
