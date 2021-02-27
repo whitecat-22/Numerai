@@ -1,7 +1,7 @@
 # Numerai
 
 
-Numerai価格予想は、WebhookからAWS APIGwatwayを通じて、Lambda経由でEC2(g4dn.xlearge)を起動。  
+Numerai価格予測は、WebhookからAWS APIGwatwayを通じて、Lambda経由でEC2(g4dn.xlearge)を起動。  
 EC2起動時に、インスタンス内： (ubuntu)/numerai/predict.py を起動する。
 
 参照元：  
