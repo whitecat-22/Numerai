@@ -1,14 +1,16 @@
 #!/bin/bash
+sudo yum update -y
 
 cd `dirname $0`
 
 SHELL=/bin/bash
-# ƒpƒX‚ğ’Ê‚·
-source /home/ubuntu/.bashrc
-# D‚«‚ÈPythonŠÂ‹«‚ğİ’è
+# ãƒ‘ã‚¹ã‚’é€šã™
+source /home/ec2-user/.bashrc
+# å¥½ããªPythonç’°å¢ƒã‚’è¨­å®š
 source activate tensorflow2_latest_serving
 
-sudo shutdown +45
+cd /home/ec2-user/numerai
+python3 predict_signals.py
+python3 predict_signals3.py
 
-cd /home/ubuntu/numerai
-/ubuntu/numerai/python3 predict.py
+sudo shutdown +5
