@@ -1,7 +1,8 @@
 # Numerai
 
 
-[Numeraiトーナメント](https://numer.ai/tournament) 提出用の株価予測は、WebhookからAWS APIGwatwayを通じて、Lambda経由でEC2(g4dn.xlearge)を起動する。  
+[Numeraiトーナメント](https://numer.ai/tournament) 提出用の株価予測は、WebhookからAWS APIGwatwayを通じて、  
+Lambda経由でEC2(g4dn.xlearge)を起動する。  
 EC2起動時に、インスタンス内： home/(user)/numerai/predict.py を起動する。
 
 - predict.py が扱うデータは、traditional data のままです。　　 →順次対応中
