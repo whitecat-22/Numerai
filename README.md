@@ -5,7 +5,7 @@
 [Lambda](https://aws.amazon.com/jp/lambda/?nc2=h_ql_prod_serv_lbd)経由で[EC2](https://aws.amazon.com/jp/ec2/?nc2=h_ql_prod_fs_ec2)(g4dn.xlearge)を起動する。  
 EC2起動時に、インスタンス内： home/(user)/numerai/predict.py を起動する。
 
-- predict.py が扱うデータは、traditional data のままです。　　　　　　　　　　　　　　 　　 　→順次対応中
+- predict.py が扱うデータは、traditional data のままです。　　　　　　　　　　　　　　　　 　→順次対応中
 　
 
 　
